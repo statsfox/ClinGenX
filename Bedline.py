@@ -1,7 +1,4 @@
-import pybedtools
-
-chr_list = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','X',
-            'Y','MT']
+from Chr import Chr
 
 class Bedline:
 
@@ -12,8 +9,8 @@ class Bedline:
         start = int(start)
         stop = int(stop)
 
-        # check chromosomes are sensible
-        assert chr in chr_list, "chromosome is not valid"
+        # get chr object
+        chr = Chr(chr)
 
         # check coordinates are int
         assert isinstance(start, int), "start is not an integer"

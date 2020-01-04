@@ -8,6 +8,7 @@ import os
 import argparse
 import logging
 from Bedline import Bedline
+import logging
 
 
 
@@ -49,7 +50,7 @@ def main():
 
             # get bed object
             bedline=Bedline(chr,start,stop)
-            print(bedline.chr)
+            print(bedline.chr.seq)
 
 
 
