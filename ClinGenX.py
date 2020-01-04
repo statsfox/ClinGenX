@@ -46,11 +46,13 @@ def main():
 
             chr = str(ln.split("\t")[0])
             start = int(ln.split("\t")[1])
-            stop = int(ln.split("\t")[2])
+            end = int(ln.split("\t")[2])
 
             # get bed object
-            bedline=Bedline(chr,start,stop)
+            bedline=Bedline(chr,start,end)
             print(bedline.chr.seq)
+            print(bedline.start.coordinate)
+            print(bedline.end.coordinate)
 
 
 
