@@ -20,12 +20,14 @@ class Coverage:
 
         total_coverage = 0
         meets_mindepth = 0
+        depth_at_base = 0
 
         for rec in depth.records:
             try:
                 depth_at_base = int(rec[2])
             except:
                 print("expected integer in depthfile but got: %r" % rec[2])
+                quit()
             total_coverage = (total_coverage + depth_at_base)
             if (depth_at_base >= mindepth):
                 meets_mindepth += 1

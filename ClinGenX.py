@@ -10,7 +10,7 @@ import logging
 from Bedline import Bedline
 from Depth import Depth
 from Coverage import Coverage
-
+from Gaps import Gaps
 
 def collect_input_arguments():
     """
@@ -72,6 +72,7 @@ def main():
             bedline = Bedline(chr, start, end)
             depth = Depth(depthfile=args.depthfile, bedline=bedline)
             coverage = Coverage(depth=depth, mindepth=args.mindepth)
+            gaps = Gaps(depth=depth, mindepth=args.mindepth)
 
             print(bedline.chr.seq)
             print(bedline.start.coordinate)
